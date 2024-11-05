@@ -1,6 +1,6 @@
 /* Container de login */
 .login-container {
-    flex: 1; 
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,6 +56,10 @@
     border-radius: 5px;
     margin-bottom: 1rem;
     font-size: 16px;
+}
+.register-link {
+    margin-top: 1rem;
+    font-size: 14px;
 }
 
 .login-button {
