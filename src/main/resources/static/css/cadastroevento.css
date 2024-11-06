@@ -57,3 +57,56 @@ form textarea {
 .login-button:hover {
     background-color: #286090;
 }
+
+/* Estilo para os eventos listados */
+.evento h2{
+    color: #337AB7;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+.list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-bottom: 2rem;
+}
+
+/* Estilo dos itens do evento */
+.event-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+.event-item h4 {
+    color: #337AB7;
+    font-size: 20px;
+}
+
+.event-item button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.event-item button:hover {
+    opacity: 0.8;
+}
+
+.event-item button:nth-child(4) {
+    background-color: #337AB7; /* Deletar */
+    color: white;
+}
+
+.event-item button:nth-child(5) {
+    background-color: #007bff; /* Alterar */
+    color: white;
+}
