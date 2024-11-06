@@ -31,7 +31,7 @@
         <div class="login-content">
             <div class="login-form">
                 <h2>Criar Evento</h2>
-                <form id="eventForm" method="POST" action="/evento">
+                <form id="eventForm">
                     <label for="title">Título do Evento</label>
                     <input type="text" id="title" name="title" required>
 
@@ -49,8 +49,6 @@
 
                     <button type="submit" class="login-button">Criar Evento</button>
                 </form>
-
-
             </div>
         </div>
     </div>
@@ -67,6 +65,36 @@
         </div>
     </div>
 </footer>
-</body>
 
+<script>
+    document.getElementById("eventForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Previne o envio padrão do formulário
+
+        const evento = {
+            title: document.getElementById("title").value,
+            image: document.getElementById("image").value,
+            description: document.getElementById("description").value,
+            dataEvent: document.getElementById("dataEvent").value,
+            localEvent: document.getElementById("localEvent").value
+        };
+
+        fetch("/api/eventos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(evento)
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert("Evento criado com sucesso!");
+                window.location.href = "/home"; // Redireciona para a página inicial
+            })
+            .catch(error => {
+                alert("Erro ao criar evento: " + error);
+            });
+    });
+</script>
+
+</body>
 </html>
