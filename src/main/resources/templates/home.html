@@ -26,18 +26,9 @@
     </nav>
 </header>
 
-<div class="card-container">
-    <th:block th:each="evento : ${eventos}">
-        <div class="card">
-            <img th:src="${evento.image}" alt="Imagem do Evento">
-            <div class="textcard">
-                <h3 th:text="${evento.title}">Nome do Evento</h3>
-                <p>Data: <span th:text="${#dates.format(evento.dataEvent, 'dd/MM/yyyy')}">01/12/2024</span></p>
-                <p>Local: <span th:text="${evento.localEvent}">Centro de Convenções</span></p>
-                <button class="subscribe-button">Inscreva-se</button>
-            </div>
-        </div>
-    </th:block>
+<!-- Contêiner para os cards -->
+<div class="card-container" id="cardContainer">
+    <!-- Os cards serão injetados aqui via JavaScript -->
 </div>
 
 <footer class="footer">
@@ -51,6 +42,8 @@
         </div>
     </div>
 </footer>
+
+<script src="/js/home.js"></script> <!-- Referência ao seu arquivo JS -->
 </body>
 
 </html>

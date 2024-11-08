@@ -10,160 +10,74 @@
     <link rel="icon" href="/img/faviconlogo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-<div class="Logo">
-    <img src="/img/UEMA.png" alt="LogoUEMA">
-</div>
-<header class="navbar">
-    <nav class="menu">
-        <a href="/home">Home</a>
-        <a href="/cadastroevento">Eventos</a>
-        <a href="/register">Contatos</a>
-        <a href="/login">Login</a>
-    </nav>
-</header>
+    <div class="Logo">
+        <img src="/img/UEMA.png" alt="LogoUEMA">
+    </div>
+    <header class="navbar">
+        <nav class="menu">
+            <a href="/home">Home</a>
+            <a href="/cadastroevento">Eventos</a>
+            <a href="/register">Contatos</a>
+            <a href="/login">Login</a>
+        </nav>
+    </header>
 
-<div class="login-container">
-    <div class="login-card">
-        <div class="login-content">
-            <div class="login-form">
-                <h2>Criar Evento</h2>
-                <form id="eventForm">
-                    <label for="title">Título do Evento</label>
-                    <input type="text" id="title" name="title" required>
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-content">
+                <div class="login-form">
+                    <h2>Criar Evento</h2>
+                    <form id="eventForm">
+                        <label for="title">Título do Evento</label>
+                        <input type="text" id="title" name="title" required>
 
-                    <label for="image">URL da Imagem</label>
-                    <input type="text" id="image" name="image" required>
+                        <label for="image">URL da Imagem</label>
+                        <input type="text" id="image" name="image" required>
 
-                    <label for="description">Descrição</label>
-                    <textarea id="description" name="description" required></textarea>
+                        <label for="description">Descrição</label>
+                        <textarea id="description" name="description" required></textarea>
 
-                    <label for="dataEvent">Data do Evento</label>
-                    <input type="date" id="dataEvent" name="dataEvent" required>
+                        <label for="dataEvent">Data do Evento</label>
+                        <input type="date" id="dataEvent" name="dataEvent" required>
 
-                    <label for="localEvent">Local do Evento</label>
-                    <input type="text" id="localEvent" name="localEvent" required>
+                        <label for="localEvent">Local do Evento</label>
+                        <input type="text" id="localEvent" name="localEvent" required>
 
-                    <button type="submit" class="login-button">Criar Evento</button>
-                </form>
+                        <button type="submit" class="login-button">Criar Evento</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="evento">
-    <h2>Eventos Cadastrados</h2>
-</div>
-<!-- Seção para listar os eventos cadastrados -->
-<div class="list-container">
-    <div class="listevent-card">
-        <div id="eventList">
-                <!-- A lista de eventos será injetada aqui pelo JavaScript -->
+    <div class="evento">
+        <h2>Eventos Cadastrados</h2>
+    </div>
+    <div class="list-container">
+        <div class="listevent-card">
+            <div id="eventList">
+                <!-- A lista de eventos é injetada pelo JavaScript -->
+            </div>
         </div>
     </div>
-</div>
 
-<footer class="footer">
-    <div class="footer-content">
-        <p>&copy; 2024 Plataforma de Eventos. Todos os direitos reservados.</p>
-        <div class="footer-links">
-            <a href="">Sobre</a>
-            <a href="">Contato</a>
-            <a href="">Política de Privacidade</a>
-            <a href="">Termos de Uso</a>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Plataforma de Eventos. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="">Sobre</a>
+                <a href="">Contato</a>
+                <a href="">Política de Privacidade</a>
+                <a href="">Termos de Uso</a>
+            </div>
         </div>
-    </div>
-</footer>
-
-<script>
-    // Função para buscar eventos cadastrados
-    function fetchEventos() {
-        fetch("/api/eventos")
-            .then(response => response.json())
-            .then(data => {
-                const eventList = document.getElementById("eventList");
-                eventList.innerHTML = ""; // Limpa a lista antes de exibir os eventos
-
-                data.forEach(event => {
-                    const eventItem = document.createElement("div");
-                    eventItem.classList.add("event-item");
-                    eventItem.innerHTML = `
-                        <h4>${event.title}</h4>
-                        <p><strong>Data:</strong> ${event.dataEvent}</p>
-                        <p><strong>Local:</strong> ${event.localEvent}</p>
-                        <img src="${event.image}" alt="Imagem do Evento" style="width: 100px; height: 100px;">
-                        <button onclick="deleteEvento(${event.id})">Deletar</button>
-                        <button onclick="editEvento(${event.id})">Alterar</button>
-                    `;
-                    eventList.appendChild(eventItem);
-                });
-            })
-            .catch(error => {
-                console.error("Erro ao buscar eventos:", error);
-            });
-    }
-
-    // Função para deletar um evento
-    function deleteEvento(eventId) {
-        fetch(`/api/eventos/${eventId}`, {
-            method: "DELETE",
-        })
-            .then(response => {
-                if (response.ok) {
-                    alert("Evento deletado com sucesso!");
-                    fetchEventos(); // Recarregar a lista de eventos
-                } else {
-                    alert("Erro ao deletar o evento.");
-                }
-            })
-            .catch(error => {
-                alert("Erro ao deletar evento: " + error);
-            });
-    }
-
-    // Função para editar um evento (Aqui você pode redirecionar ou mostrar um formulário de edição)
-    function editEvento(eventId) {
-        // Aqui você pode redirecionar para uma página de edição ou preencher um formulário com os dados do evento.
-        window.location.href = `/editEvento?id=${eventId}`;
-    }
-
-    // Chama a função para carregar os eventos quando a página for carregada
-    window.onload = function() {
-        fetchEventos();
-    };
-
-    // Envio do formulário para criação do evento
-    document.getElementById("eventForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Previne o envio padrão do formulário
-
-        const evento = {
-            title: document.getElementById("title").value,
-            image: document.getElementById("image").value,
-            description: document.getElementById("description").value,
-            dataEvent: document.getElementById("dataEvent").value,
-            localEvent: document.getElementById("localEvent").value
-        };
-
-        fetch("/api/eventos", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(evento)
-        })
-            .then(response => response.json())
-            .then(data => {
-                alert("Evento criado com sucesso!");
-                fetchEventos(); // Recarregar a lista de eventos
-            })
-            .catch(error => {
-                alert("Erro ao criar evento: " + error);
-            });
-    });
-</script>
-
+    </footer>
+    <script src="/js/events.js"></script>
 </body>
+
 </html>
