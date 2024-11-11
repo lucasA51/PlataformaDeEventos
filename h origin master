@@ -1,0 +1,29 @@
+[33mcommit baf53df9cf1edc1ddda5a3e1a970d81f904df959[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Álex Dias <alekxdias@gmail.com>
+Date:   Tue Nov 5 22:47:24 2024 -0300
+
+    Ajustando o HomeController. Adicionei o Javascript na pagina de cadastro de eventos, bem como está funcional a inserção de um evento no banco de dados
+
+[33mcommit 0ee92383e7f514942e76c58e6edd5ac8feffff5d[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Álex Dias <alekxdias@gmail.com>
+Date:   Mon Nov 4 23:46:20 2024 -0300
+
+    Criacao da pagina de cadastro de eventos, criação das principais entidades bemo como os controllers e services do projeto
+
+[33mcommit 5e4d06e83379c69e59e376cb4d8faec8e193f377[m
+Author: Álex Dias <alekxdias@gmail.com>
+Date:   Sat Nov 2 14:30:52 2024 -0300
+
+    Criação de um estilo global para melhor organização e manutenção
+
+[33mcommit f1e2f1ced1b9d0117e100787b9de4d8da9f013c4[m
+Author: ALEX DIAS <alexdias@fiema.org.br>
+Date:   Fri Nov 1 12:06:42 2024 -0300
+
+    Adicionei novos arquivos das paginas de Login, Home, Eventos e Cadastro de Usuario
+
+[33mcommit 9774520dac3eb20dfd7848810c027ef4a03556f7[m
+Author: Lucas Andrade <lucasa.santos.la4@gmail.com>
+Date:   Thu Oct 31 07:22:33 2024 -0300
+
+    Commit inicial

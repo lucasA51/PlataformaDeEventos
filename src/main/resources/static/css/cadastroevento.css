@@ -59,19 +59,22 @@ form textarea {
 }
 
 /* Estilo para os eventos listados */
-.evento h2{
+.evento h2 {
     color: #337AB7;
     margin-bottom: 1.5rem;
     text-align: center;
 }
+
 .list-container {
     display: flex;
     justify-content: center;
     padding-bottom: 2rem;
 }
-.event-info{
+
+.event-info {
     text-align: center;
 }
+
 .event-item {
     display: flex;
     align-items: center;

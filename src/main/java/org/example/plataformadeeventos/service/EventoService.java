@@ -34,6 +34,7 @@ public class EventoService {
         eventoExistente.setImage(evento.getImage());
         eventoExistente.setDescription(evento.getDescription());
         eventoExistente.setDataEvent(evento.getDataEvent());
+        eventoExistente.setHoraEvent(evento.getHoraEvent());
         eventoExistente.setLocalEvent(evento.getLocalEvent());
 
         return eventoRepository.save(eventoExistente);
