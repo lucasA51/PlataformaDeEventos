@@ -3,20 +3,29 @@
     gap: 1rem;
 }
 
-/* Personalize o botão de inscrição */
+/* Personaliza o botão de inscrição */
 .btn-primary {
-    background-color: #337AB7;
-    border: none;
-    font-weight: 500;
-    font-family: "Montserrat", serif;
+    border: 1px solid #337AB7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    transition: background-color 0.3s;
+    margin-right: 5px;
+    text-decoration: none;
+    width: 200px;
+    color: #337AB7;
+
 }
 
 .btn-primary:hover {
-    background-color: #286090;
+    background-color: #337AB7;
+    color: #fff;
 }
 
-/* Estilo de hover e efeito de sombra */
+/* Estilo de card */
 .card {
+    text-decoration: none;
     transition: box-shadow 0.3s ease;
     border: none;
     height: 100%;
@@ -35,7 +44,7 @@
 
 .card-body {
     flex-grow: 1;
-    padding: 15px;
+    padding: 10px;
 }
 
 .card-body h5 {
@@ -48,14 +57,78 @@
     border: none;
     background: transparent;
     color: #2B3C5D;
-    padding: 2px 0;
     font-size: 14px;
+    margin: 0;
+    padding: 0;
 }
 
 .card-footer {
-    text-align: start;
     border: none;
     background: transparent;
     padding: 2px 0;
     font-size: 14px;
+}
+
+/* Estilo de Carousel */
+.carousel-item {
+    height: auto;
+    padding: 0;
+    position: relative;
+
+}
+
+.carousel-image-container {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* Adiciona sombra ao redor do carrossel */
+.carousel {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+
+}
+
+/* Zonas invisíveis nas margens esquerda e direita do carrossel */
+.carousel-zone-left, .carousel-zone-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+}
+
+.carousel-zone-left {
+    left: 0;
+}
+
+.carousel-zone-right {
+    right: 0;
+}
+
+.carousel-indicators {
+    display: none;
+}
+
+h2 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #2B3C5D;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #337AB7;
+    padding-left: 10px;
 }

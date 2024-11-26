@@ -36,7 +36,20 @@
         </div>
     </header>
 
+    <div class="container mt-2">
+        <h2 class="mb-4">Eventos em Destaque</h2>
+        <!-- Carrossel Container -->
+        <div id="carouselContainer" class="position-relative">
+            <!-- O carrossel será injetado aqui via JavaScript -->
+        </div>
+
+        <!-- Zonas invisíveis de clique para navegação (esquerda e direita) -->
+        <div class="carousel-zone-left" onclick="moveCarousel('prev')"></div>
+        <div class="carousel-zone-right" onclick="moveCarousel('next')"></div>
+    </div>
+
     <div class="container mt-4">
+        <h2 class=" mb-4">Eventos Academicos</h2>
         <div class="card-group" id="cardContainer">
             <!-- Cards serão injetados aqui via JavaScript -->
         </div>

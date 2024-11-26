@@ -45,7 +45,7 @@ body, html {
 }
 .navbar-custom .nav-link:hover {
     color: #286090;
-    background-color: #e0e0e0; /* Cor de fundo ao passar o mouse */
+    background-color: #e0e0e0;
 }
 
 /* Borda para o link "Cadastre-se" */
@@ -53,12 +53,12 @@ body, html {
     border: 1px solid #337AB7;
     padding: 5px 10px;
     border-radius: 5px;
-    color: #337AB7; /* Cor inicial do texto */
+    color: #337AB7;
 }
 
 .navbar-custom .nav-link.cadastro:hover {
-    background-color: #337AB7; /* Cor de fundo ao passar o mouse */
-    color: #fff; /* Cor do texto ao passar o mouse */
+    background-color: #337AB7;
+    color: #fff;
 }
 
 /* Estilos Rodapé */
@@ -67,24 +67,29 @@ body, html {
     color: #fff;
     padding: 28px 0;
     text-align: center;
-    font-family: "Montserrat", serif;
+    font-family: "Montserrat", sans-serif; /* Usar sans-serif para mais modernidade */
     width: 100%;
     margin-top: auto;
+    box-sizing: border-box;
 }
 
+/* Contêiner do conteúdo do rodapé */
 .footer-content {
-    max-width: 1000px;
+    max-width: 1000px; /* Limitar largura para não esticar demais em telas grandes */
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Estilo para o texto do rodapé */
 .footer-content p {
     margin: 0;
     padding: 10px 0;
     font-size: 14px;
     font-weight: 500;
+    color: #FFFFFF; /* Cor suave para o texto */
 }
 
+/* Links do Rodapé */
 .footer-links {
     display: flex;
     justify-content: center;
@@ -96,12 +101,13 @@ body, html {
 .footer-links a {
     color: #ffffff;
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s ease;
     font-weight: 500;
+    padding: 5px 10px;
 }
 
 .footer-links a:hover {
-    color: #286090;
+    transform: translateY(-2px);
 }
 
 .subscribe-button {
