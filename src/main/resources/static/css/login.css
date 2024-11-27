@@ -10,7 +10,7 @@
 
 .login-card {
     width: 1000px;
-    height: 600px;
+    height: 500px;
     padding: 2rem;
     background-color: #ffffff;
     border-radius: 10px;
@@ -33,20 +33,20 @@
 }
 
 .login-form {
-    max-width: 600px;
+    max-width: 300px;
 }
 
 .login-card h2 {
-    margin-bottom: 1.5rem;
-    color: #333;
+    color: #2B3C5D;
     text-align: center;
+    font-weight: bold;
 }
 
 .login-card label {
     display: block;
     font-weight: bold;
-    margin: 1rem 0 0.5rem;
-    color: #333;
+    color: #2B3C5D;
+    font-size: 16px;
 }
 
 .login-card input {
@@ -61,19 +61,4 @@
 .register-link {
     margin-top: 1rem;
     font-size: 14px;
-}
-
-.login-button {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #337AB7;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.login-button:hover {
-    background-color: #286090;
 }

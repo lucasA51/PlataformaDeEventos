@@ -27,6 +27,11 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/cadastro")
+    public String cadastroPage() {
+        return "register";
+    }
+
     @GetMapping("/evento/{id}")
     public String eventoPage() {
         return "evento";
